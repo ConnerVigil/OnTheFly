@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "flight-tracker",
+    "slug": "flight-tracker",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "flight-tracker"
+}
