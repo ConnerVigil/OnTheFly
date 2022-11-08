@@ -10,10 +10,10 @@ import MapView, { Circle } from "react-native-maps";
 import { Marker, Polyline } from "react-native-maps";
 import { useRef } from "react";
 import { useState } from "react";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function MapScreen() {
   let mapRef = useRef(null);
-  // const [region, setRegion] = useState({});
   const [showRoute, setShowRoute] = useState(false);
 
   const initialRegion = {
@@ -35,6 +35,10 @@ export default function MapScreen() {
     setShowRoute(true);
   };
 
+  const goToCurrentLocation = () => {
+    mapRef.current.animateToRegion(initialRegion, 1.5 * 1000);
+  };
+
   return (
     <View style={styles.container}>
       <MapView
@@ -44,7 +48,7 @@ export default function MapScreen() {
         initialRegion={initialRegion}
       >
         <Marker coordinate={destination} title="Your Gate" pinColor="orange" />
-        <Circle center={initialRegion} radius={3} fillColor={"orange"} />
+        <Circle center={initialRegion} radius={3} fillColor={"#42adff"} />
         {showRoute && (
           <Polyline
             coordinates={[initialRegion, destination]}
@@ -54,10 +58,17 @@ export default function MapScreen() {
           />
         )}
       </MapView>
-      <TouchableOpacity style={styles.overlay}>
-        <Text style={styles.button} onPress={() => goToDestination()}>
-          Get directions to my gate
-        </Text>
+      <TouchableOpacity
+        style={styles.locationButton}
+        onPress={() => goToCurrentLocation()}
+      >
+        <Ionicons name={"locate"} size={20} color={"black"} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.overlay}
+        onPress={() => goToDestination()}
+      >
+        <Text style={styles.button}>Get directions to my gate</Text>
       </TouchableOpacity>
     </View>
   );
@@ -83,5 +94,13 @@ const styles = StyleSheet.create({
   },
   button: {
     fontSize: 17,
+  },
+  locationButton: {
+    position: "absolute",
+    backgroundColor: "orange",
+    bottom: 30,
+    right: 20,
+    padding: 10,
+    borderRadius: 50,
   },
 });
