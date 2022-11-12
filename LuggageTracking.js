@@ -12,7 +12,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-export default function MapScreen() {
+export default function LuggageTracking() {
   let mapRef = useRef(null);
   const [showRoute, setShowRoute] = useState(false);
 
@@ -24,8 +24,8 @@ export default function MapScreen() {
   };
 
   const destination = {
-    latitude: 40.7853587070029,
-    longitude: -111.99215583904606,
+    latitude: 40.78443045617191,
+    longitude: -111.98522024994053,
     latitudeDelta: 0.002,
     longitudeDelta: 0.002,
   };
@@ -51,8 +51,8 @@ export default function MapScreen() {
       >
         <Marker
           coordinate={destination}
-          title="Gate 24A"
-          description="Departure Gate"
+          title="Baggage Claim"
+          description="13"
           pinColor="orange"
           isPreselected={true}
         />
@@ -76,11 +76,11 @@ export default function MapScreen() {
         style={styles.overlay}
         onPress={() => goToDestination()}
       >
-        <Text style={styles.button}>Get directions to my gate</Text>
+        <Text style={styles.button}>Get directions to baggage claim</Text>
       </TouchableOpacity>
       {showRoute && (
         <View style={styles.banner}>
-          <Text style={styles.bannerText}>Directions to Gate 24A</Text>
+          <Text style={styles.bannerText}>Directions Baggage Claim</Text>
         </View>
       )}
     </View>
