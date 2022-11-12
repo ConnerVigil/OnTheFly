@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   overlay: {
     position: "absolute",
     bottom: 30,
-    backgroundColor: "#3f69e6",
+    backgroundColor: "black",
     padding: 10,
     borderRadius: 50,
   },

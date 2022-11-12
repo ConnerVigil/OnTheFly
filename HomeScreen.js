@@ -33,8 +33,8 @@ export default class HomeScreen extends Component {
         <ScrollView>
           {flights.map((flight) => {
             return (
-              <View>
-                <FlightCard key={flight.id} flight={flight} />
+              <View key={flight.id}>
+                <FlightCard flight={flight} />
               </View>
             );
           })}
