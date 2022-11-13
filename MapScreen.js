@@ -80,7 +80,7 @@ export default function MapScreen() {
       </TouchableOpacity>
       {showRoute && (
         <View style={styles.banner}>
-          <Text style={styles.bannerText}>Directions to Gate 24A</Text>
+          <Text style={styles.bannerText}>Flight Departure in 14 minutes</Text>
         </View>
       )}
     </View>

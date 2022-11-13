@@ -46,7 +46,15 @@ export default function FlightCard({ flight }) {
       </View>
 
       <View style={styles.circleForLogo}>
-        <Image source={require("./delta.png")} style={styles.image} />
+        {(flight.airline === "Delta" && (
+          <Image source={require("./delta.png")} style={styles.image} />
+        )) ||
+          (flight.airline === "United" && (
+            <Image
+              source={require("./united.png")}
+              style={styles.unitedImage}
+            />
+          ))}
       </View>
     </View>
   );
@@ -67,11 +75,9 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.55,
     shadowRadius: 4.84,
-
     elevation: 5,
   },
   flightInfoTop: {
-    // backgroundColor: "red",
     flexDirection: "row",
   },
   flightInfoBottom: {
@@ -158,6 +164,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 5,
     bottom: 9,
+  },
+  unitedImage: {
+    width: 40,
+    height: 40,
+    position: "absolute",
+    borderRadius: 20,
   },
   circleForLogo: {
     width: 40,

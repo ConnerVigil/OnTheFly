@@ -7,22 +7,24 @@ const flights = [
   {
     id: 1,
     flightNumber: "DL 123",
-    departureTime: "10:00 AM",
-    arrivalTime: "12:00 PM",
+    departureTime: "10:07 AM",
+    arrivalTime: "12:23 PM",
     departureAirport: "SLC",
     arrivalAirport: "LAX",
     departureGate: "24A",
     arrivalGate: "12B",
+    airline: "Delta",
   },
   {
     id: 2,
     flightNumber: "DL 456",
-    departureTime: "2:00 PM",
-    arrivalTime: "7:00 PM",
+    departureTime: "2:41 PM",
+    arrivalTime: "7:39 PM",
     departureAirport: "LAX",
     arrivalAirport: "JFK",
     departureGate: "19B",
     arrivalGate: "16C",
+    airline: "United",
   },
 ];
 

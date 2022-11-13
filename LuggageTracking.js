@@ -80,7 +80,7 @@ export default function LuggageTracking() {
       </TouchableOpacity>
       {showRoute && (
         <View style={styles.banner}>
-          <Text style={styles.bannerText}>Directions Baggage Claim</Text>
+          <Text style={styles.bannerText}>Baggage arrived at 5:06 PM</Text>
         </View>
       )}
     </View>
